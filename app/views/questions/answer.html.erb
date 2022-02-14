@@ -1,0 +1,18 @@
+<h1>Stupid Coaching</h1>
+<% if params[:question] == 'I am going to work' %>
+<% @answer = 'Great!' %>
+<% elsif params[:question][-1] == '?' %>
+<% @answer = 'Silly question, get dressed and go to work!' %>
+<% else %>
+<% @answer = "I don't care, get dressed and go to work!" %>
+<% end %>
+<div>
+  <p><%= params[:question] %></p>
+  <p>- <i>You</i></p>
+</div>
+<div>
+  <p><strong><%= @answer %></strong></p>
+  <p>- <i>Your coach</i></p>
+</div>
+
+<%= link_to 'Ask a new question', ask_path %>
